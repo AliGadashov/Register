@@ -1,0 +1,386 @@
+
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #7c7b7b;
+}
+
+a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_main {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 30px 30px 30px 30px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.062);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .form_main::before {
+    position: absolute;
+    content: "";
+    width: 600px;
+    height: 600px;
+    background-color: rgb(209, 193, 255);
+    left: -360px;
+    bottom: -100px;
+    z-index: -2;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+    animation: romb 4s ease-in-out infinite alternate ;
+  }
+  
+  @keyframes romb {
+    from {
+      transform: rotate(45deg);
+    }
+    to {
+      transform: rotate(405deg);
+    }
+  }
+
+  .circle {
+    position: absolute;
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-color: rgb(219, 185, 241);
+    left: 165px;
+    bottom: 380px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+    animation: circle 8s ease-in-out infinite alternate;
+  }
+  @keyframes circle {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      transform: translateX(-100px) scale(0.6);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+  }
+  .littleCircle {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: rgb(162, 104, 255);;
+    left: 345px;
+    bottom: 175px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+    animation: littleCircle 4s ease-in-out infinite alternate;
+  }
+  @keyframes littleCircle {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(150px) scale(0.6);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+  }
+  .heading {
+    font-size: 2em;
+    color: #2e2e2e;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+    z-index: 2;
+  }
+  
+  .inputContainer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .inputField {
+    width: 80%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(132, 119, 119);
+    margin: 10px 0;
+    color: black;
+    font-size: .8em;
+    font-weight: 500;
+    box-sizing: border-box;
+    padding-left: 30px;
+  }
+  
+  .inputField:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(199, 114, 255);
+  }
+  
+  .inputField::placeholder {
+    color: rgb(80, 80, 80);
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  
+  .button {
+    z-index: 2;
+    position: relative;
+    width: 20%;
+    border: none;
+    background-color: rgb(162, 104, 255);
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+    font-size: .8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: rgb(126, 84, 255);
+  }
+  
+  .tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    padding: 0.75rem;
+    border-radius: 99px;
+  }
+  
+  .tabs * {
+    z-index: 2;
+  }
+
+  .container{
+    margin: 25px 0 5px 0;
+  }
+  
+  .container input[type="radio"] {
+    display: none;
+  }
+  
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 50px;
+    font-size: .8rem;
+    color: black;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+  
+  
+  .container input[type="radio"]:checked + label {
+    color: #185ee0;
+  }
+  
+  .container input[type="radio"]:checked + label >{
+    background-color: rgb(209, 193, 255);
+    color: #fff;
+    margin: 0px;
+  }
+  
+  .container input[id="male"]:checked ~ .glider {
+    transform: translateX(0);
+  }
+  
+  .container input[id="female"]:checked ~ .glider {
+    transform: translateX(100%);
+  }
+  
+  
+  .glider {
+    position: absolute;
+    display: flex;
+    height: 30px;
+    width: 50px;
+    background-color: rgb(209, 193, 255);
+    z-index: 1;
+    border-radius: 99px;
+    transition: 0.25s ease-out;
+  }
+  
+  .chooseColor{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  .messageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .textareaField {
+    width: 100%;
+    background-color: rgb(219, 185, 241);
+    border: none;
+    border-bottom: 2px solid rgb(132, 119, 119);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    color: black;
+    font-size: 1em;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+
+  .textareaField:focus {
+    outline: none;
+    background-color: rgb(219, 185, 241 ,0.25) ;
+    transition: background-color 3s ease;
+    border-bottom: 2px solid rgb(199, 114, 255);
+  }
+  
+  .textareaField:not(:focus) {
+    outline: none;
+    background-color: rgb(219, 185, 241) ;
+    transition: background-color 3s ease;
+    border-bottom: 2px solid rgb(199, 114, 255);
+  }
+  
+  .textareaField::placeholder {
+    color: rgb(80, 80, 80);
+    font-size: 1em;
+    font-weight: 500;
+  }
+  
+.selectCountry{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .countrySelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(162, 104, 255) ;
+    border: 1px solid rgb(219, 185, 241 ,0.25) ;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  
+.formMainForRegister {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 30px 30px 30px 30px;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.062);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.formMainForRegister::before {
+  position: absolute;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: rgb(209, 193, 255);
+  left: 360px;
+  bottom: 0px;
+  z-index: -2;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+  animation: rombForRegister 4s ease-in-out infinite alternate;
+}
+@keyframes rombForRegister {
+  from {
+    transform: translateX(0px) rotate(-45deg);
+  }
+  to {
+    transform: translateX(-500px) rotate(-405deg);
+  }
+}
+
+.circleForRegister {
+  position: absolute;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: rgb(219, 185, 241);
+  left: -200px;
+  bottom: 250px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+  animation: circle 8s  ease-in-out infinite alternate;
+}
+@keyframes circle {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(500px) scale(0.4);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+.littleCircleForRegister {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 150px;
+  background-color: rgb(162, 104, 255);;
+  left: 345px;
+  bottom: 175px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+  animation: littleCircle 4s  ease-in-out infinite alternate;
+}
+@keyframes littleCircle {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(150px) scale(0.6);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}

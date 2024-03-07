@@ -1,0 +1,77 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+table{
+    width: 97%;
+    height: 97%;
+    table-layout: fixed;
+    border-radius: 20px;
+}
+
+th, td {
+    width: 10%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: fit-content;
+    background-color: rgb(219, 185, 241);
+}
+
+.bold{
+    font-weight: 800;
+}
+
+.tableAnimation{
+    width: 100%;
+    min-width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(209, 193, 255);
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: -1;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 1000%;
+    background-color: rgb(162, 104, 255);
+    box-shadow: 0 0 10px rgb(209, 193, 255);
+    animation: animate 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.box::after{
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background-color: white;
+    border-radius: 16px;
+    z-index: -1;
+
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

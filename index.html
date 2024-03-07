@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <form class="form_main">
+        <h1 class="heading">Personal Info</h1>
+
+        <div class="circle"></div>
+        <div class="littleCircle"></div>
+        <div class="inputContainer">
+            <input autocomplete="off" class="inputField" placeholder="Name" type="text" name="name" id="name">
+            <input autocomplete="off" class="inputField" placeholder="Surname" type="text" name="surname" id="surname">
+            <input class="inputField" placeholder="BirthDate" type="date" name="birthDate" id="birthDate">
+            <input autocomplete="off" class="inputField" placeholder="Age" type="number" name="age" id="age">
+            <div class="container">
+                <div class="tabs">
+                    <input type="radio" id="male" name="tabs" checked="">
+                    <label class="tab" for="male">Male</label>
+                    <input type="radio" id="female" name="tabs">
+                    <label class="tab" for="female">Female</label>
+                    <span class="glider"></span>
+                </div>
+            </div>
+            <div class="selectCountry">
+                <p>Choose a country</p>
+                <select class="countrySelect"">
+                    <option value="" disabled selected>Select a country</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="TR">Turkey</option>
+                    <option value="RU">Russia</option>
+                    <option value="US">United States</option>
+              </select>
+            </div>
+        </div>
+        
+        <div class="chooseColor">
+            <label for="color">Choose favorite color</label>
+            <input type="color" name="color" id="color">
+        </div>
+        
+        <a class="button" href="registration.html">
+            Submit
+        </a>
+    </form>
+</body>
+</html>
